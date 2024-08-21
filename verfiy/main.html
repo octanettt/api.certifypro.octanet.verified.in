@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verify Your Certificate Id</title>
+    <link rel="stylesheet" href="/verfiy/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Verify Your Certificate Id</h1>
+    <form onsubmit="return verifyCertificate()">
+        <label for="verification-code">Verification Code:</label>
+        <input type="text" id="verification-code" name="verification-code" required>
+        <button type="submit">Verify</button>
+    </form>
+</div>
+
+<script>
+    // Correct certificate ID
+    const correctID = "08-2024-10006"; // Replace with your actual correct ID
+
+    function verifyCertificate() {
+        const enteredID = document.getElementById('verification-code').value;
+
+        if (enteredID === correctID) {
+            // Redirect to the verified page
+            window.location.href = "/verified.html";
+        } else {
+            // Redirect to the error page
+            window.location.href = "error.html";
+        }
+
+        // Prevent the form from submitting the traditional way
+        return false;
+    }
+</script>
+</body>
+</html>
